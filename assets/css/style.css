@@ -1,0 +1,15 @@
+h1 {
+    padding: 30px;
+}
+
+#left {
+    border: 1px solid black;
+}
+
+#right {
+    border: 1px solid black;
+}
+
+div {
+    margin: 10px;
+}
