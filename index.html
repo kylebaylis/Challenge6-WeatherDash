@@ -13,21 +13,29 @@
     </header>
 
     <main>
-        <div class="container">
+        <div class="container mw-90">
             <div class="row">
                 <div id="left" class="col-4">
                         <form>
-                            <label>Search for a City:</label>
-                            <input placeholder="Enter a City Name" />
-                            <button>Search</button>
+                            <div class="container">
+                                <div class="row" id="searchLabel">
+                                    <label class="text-center">Search for a City:</label>
+                                </div>
+                                <div class="row" id="searchInput">
+                                    <input placeholder="Enter a City Name" />
+                                </div>
+                                <div class="row" id="searchButton">
+                                    <button>Search</button>
+                                </div>
+                            </div>
                         </form>
                 </div>
-                <div id="right" class="col-7">
+                <div id="right" class="col-8">
                     <div id="currentWeather">
-                        <p>hi</p>
+                        <p>Current Weather</p>
                     </div>
                     <div id="futureWeather">
-                        <p>hi</p>
+                        <p>5 Day Forecast</p>
                     </div>
                 </div> 
             </div>

@@ -2,14 +2,12 @@ h1 {
     padding: 30px;
 }
 
-#left {
+#left, #right {
     border: 1px solid black;
+    padding: 10px;
 }
 
-#right {
-    border: 1px solid black;
+#searchLabel, #searchInput, #searchButton {
+    padding: 5px;
 }
 
-div {
-    margin: 10px;
-}
