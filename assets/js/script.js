@@ -1,4 +1,6 @@
-var city = "London"
+var city = document.querySelector("cityName");
+
+var searchFun = document.getElementById("search");
 
 var apiCallTest = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=1&appid=53f36a2515b02d34176389d7c4f5de84";
 
@@ -12,7 +14,7 @@ var apiCallFun = function() {
     })
 };
 
-apiCallFun();
+searchFun.addEventListener("click", apiCallFun());
 
 
 
