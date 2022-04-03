@@ -1,6 +1,7 @@
 # Challenge6-WeatherDash
 
 A website that displayes current and future weather data for a city entered by the user.
+
 https://kylebaylis.github.io/Challenge6-WeatherDash/
 
 Displaying results:
