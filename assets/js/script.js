@@ -1,6 +1,8 @@
 var citySearch = document.querySelector("#search");
 var cityNameInput = document.querySelector("#cityName");
 
+var currrentWeather = document.querySelector("#currentWeather");
+
 // div id for current weather
 var currentDiv = document.querySelector("#currentWeather");
 
@@ -34,7 +36,12 @@ var getWeather = function(city) {
     fetch(apiUrl).then(function(response) {
     console.log(response);
     response.json().then(function(data) {
-      displayWeather(data.name, data.main);
+      displayWeather(data.name, data.main.temp);
+      var showCurrentWeather = document.createElement("p");
+      var toCurrentWeather = document.createTextNode(data.main.temp);
+
+      showCurrentWeather.appendChild(toCurrentWeather);
+      document.getElementById("currentWeather").appendChild(showCurrentWeather);
     });
   });
 };
@@ -49,3 +56,10 @@ citySearch.addEventListener("click", cityGet);
 
 
 
+
+        /*create p element to display weather info
+        var showCurrentWeather = document.createElement("p");
+        var toCurrentWeather = document.createTextNode(data.main);
+
+        showCurrentWeather.appendChild(toCurrentWeather);
+        document.getElementById("currentWeather").appendChild(showCurrentWeather); */
