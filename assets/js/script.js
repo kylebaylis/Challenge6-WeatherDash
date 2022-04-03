@@ -19,6 +19,10 @@ var cityGet = function(event) {
 
     if (cityName) {
         getWeather(cityName);
+
+        // clear old data
+        currrentWeather.textContent = "";
+        cityNameInput.value = "";
         // creaete p element and store search term in it
         var addToHist = document.createElement("p");
         var innerAddToHist = document.createTextNode(cityName);
@@ -37,15 +41,17 @@ var getWeather = function(city) {
     console.log(response);
     response.json().then(function(data) {
       displayWeather(data.name, data.main.temp);
-      var showCurrentWeather = document.createElement("p");
-      var toCurrentWeather = document.createTextNode(data.main.temp);
+      // to create p element and display weather data in current weather section
+      var showCurrentWeatherTemp = document.createElement("p");
+      var toCurrentWeatherTemp = document.createTextNode("Current temperature: " + data.main.temp);
 
-      showCurrentWeather.appendChild(toCurrentWeather);
-      document.getElementById("currentWeather").appendChild(showCurrentWeather);
+      showCurrentWeatherTemp.appendChild(toCurrentWeatherTemp);
+      document.getElementById("currentWeather").appendChild(showCurrentWeatherTemp);
     });
   });
 };
 
+// pulls select data from api call
 var displayWeather = function(cityProperName, cityData) {
     console.log(cityProperName);
     console.log(cityData);
@@ -53,13 +59,3 @@ var displayWeather = function(cityProperName, cityData) {
 
 // search for city on button click, and add search term to search history
 citySearch.addEventListener("click", cityGet);
-
-
-
-
-        /*create p element to display weather info
-        var showCurrentWeather = document.createElement("p");
-        var toCurrentWeather = document.createTextNode(data.main);
-
-        showCurrentWeather.appendChild(toCurrentWeather);
-        document.getElementById("currentWeather").appendChild(showCurrentWeather); */
