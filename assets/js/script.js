@@ -39,6 +39,7 @@ var getWeather = function(city) {
   });
 }
 
+// search for city on button click, and add search term to search history
 citySearch.addEventListener("click", cityGet);
 
 
