@@ -40,21 +40,34 @@ var getWeather = function(city) {
     fetch(apiUrl).then(function(response) {
     console.log(response);
     response.json().then(function(data) {
-      displayWeather(data.name, data.main.temp);
-      // to create p element and display weather data in current weather section
-      var showCurrentWeatherTemp = document.createElement("p");
-      var toCurrentWeatherTemp = document.createTextNode("Current temperature: " + data.main.temp);
+       // to create p element and display weather data in current weather section 
+      displayWeatherTemp(data.name, data.main.temp);
+      
+      var showCurrentWeather = document.createElement("p");
+      var toCurrentWeatherTemp = document.createTextNode("Current Temperature: " + data.main.temp + " °F");
 
-      showCurrentWeatherTemp.appendChild(toCurrentWeatherTemp);
-      document.getElementById("currentWeather").appendChild(showCurrentWeatherTemp);
+      showCurrentWeather.appendChild(toCurrentWeatherTemp);
+      document.getElementById("currentWeather").appendChild(showCurrentWeather);
+
+      displayWeatherHumid(data.main.humidity);
+
+      var showCurrentHumidity = document.createElement("p");
+      var toCurrentWeatherHumidity = document.createTextNode("Current Humidity: " + data.main.humidity + "%");
+
+      showCurrentHumidity.appendChild(toCurrentWeatherHumidity);
+      document.getElementById("currentWeather").appendChild(showCurrentHumidity);
     });
   });
 };
 
-// pulls select data from api call
-var displayWeather = function(cityProperName, cityData) {
+// pulls temperature data from api call
+var displayWeatherTemp = function(cityProperName, cityData) {
     console.log(cityProperName);
     console.log(cityData);
+};
+
+var displayWeatherHumid = function(cityWeather) {
+    console.log(cityWeather);
 };
 
 // search for city on button click, and add search term to search history
