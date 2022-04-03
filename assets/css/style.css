@@ -1,5 +1,9 @@
 h1 {
     padding: 30px;
+    margin-left: 60px;
+}
+h3 {
+    margin-top: 30px;
 }
 
 #left, #right {
@@ -13,4 +17,28 @@ h1 {
 
 h2 {
     margin-bottom: 20px;
+}
+
+#currentWeather {
+    border: 1px solid black;
+    border-radius: 3px;
+    min-width: 50%;
+    min-height: 300px;
+}
+
+p {
+    margin: 10px;
+}
+
+button {
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.currentHeader {
+    margin: 10px;
+}
+
+input {
+    border-radius: 3px;
 }
