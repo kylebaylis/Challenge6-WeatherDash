@@ -34,10 +34,15 @@ var getWeather = function(city) {
     fetch(apiUrl).then(function(response) {
     console.log(response);
     response.json().then(function(data) {
-      console.log(data);
+      displayWeather(data.name, data.main);
     });
   });
-}
+};
+
+var displayWeather = function(cityProperName, cityData) {
+    console.log(cityProperName);
+    console.log(cityData);
+};
 
 // search for city on button click, and add search term to search history
 citySearch.addEventListener("click", cityGet);
